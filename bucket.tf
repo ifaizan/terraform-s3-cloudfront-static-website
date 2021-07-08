@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "bucket-for-static-web" {
   bucket = "bucket-for-static-web"
-  acl = "private"
+  acl    = "private"
 
   website {
     index_document = "index.html"
@@ -25,6 +25,6 @@ resource "aws_s3_bucket_policy" "mybucketpolicy" {
   bucket = aws_s3_bucket.bucket-for-static-web.id
   policy = data.aws_iam_policy_document.s3_policy.json
 
-# Can be used when we want to use a policy from our template files
-#  policy = templatefile("./templates/policy.json", { arn = "${aws_s3_bucket.bucket-for-static-web.arn}" })
+  # Can be used when we want to use a policy from our template files
+  #  policy = templatefile("./templates/policy.json", { arn = "${aws_s3_bucket.bucket-for-static-web.arn}" })
 }
