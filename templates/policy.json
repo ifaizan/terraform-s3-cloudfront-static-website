@@ -1,0 +1,15 @@
+{
+  "Id": "Policy1625727269711",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1625727266375",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "${arn}/*",
+      "Principal": "*"
+    }
+  ]
+}
